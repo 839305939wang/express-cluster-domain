@@ -4,26 +4,29 @@
  cd example</br>
  node test.js</br>
 ##使用方法:</br>
-let express = require("express");</br>
-let app = express();</br>
-let ecd = require("express-cluster-domain");</br>
-app.use(ecd.clusterDomain({</br>
-	killTimeout:1000,</br>
-  error:function(err){</br>
-     console.log("sorry!request bad!");</br>
-  }</br>
-}));</br>
-app.get("/",(req,res)=>{</br>
-	 setTimeout(function(){</br>
-	 	if(Math.random()>0.5){</br>
-	 		throw new Error("Error from timeout");</br>
-	 	}else{</br>
-	 		console.log("訪問正常");</br>
-	 		res.send("request success!")</br>
-	 	}</br>
-	 },2000)</br>
-});</br>
-ecd.startServer(function(){</br>
-	app.listen(8080);</br>
-})</br>
+<pre><code>
+       let express = require("express");
+	let app = express();
+	let ecd = require("express-cluster-domain");
+	app.use(ecd.clusterDomain({
+		killTimeout:1000,
+	  error:function(err){
+	     console.log("sorry!request bad!");
+	  }</br>
+	}));</br>
+	app.get("/",(req,res)=>{
+		 setTimeout(function(){
+			if(Math.random()>0.5){
+				throw new Error("Error from timeout");
+			}else{
+				console.log("訪問正常");
+				res.send("request success!")
+			}</br>
+		 },2000)</br>
+	});</br>
+	ecd.startServer(function(){</br>
+		app.listen(8080);</br>
+	})</br>
+</code></pre>
+
 
