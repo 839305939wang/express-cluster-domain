@@ -1,0 +1,30 @@
+{
+  "name": "express-cluster-domain",
+  "version": "1.0.0",
+  "description": "express-cluster-domain",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/839305939wang/express-cluster-domain.git"
+  },
+  "keywords": [
+    "cluster",
+    "domain",
+    "express"
+  ],
+  "author": "yangyangwang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/839305939wang/express-cluster-domain/issues"
+  },
+  "homepage": "https://github.com/839305939wang/express-cluster-domain#readme",
+  "devDependencies": {
+    "express": "^4.15.4"
+  }
+}
